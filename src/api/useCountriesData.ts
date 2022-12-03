@@ -31,9 +31,21 @@ export const useCountriesData = () => {
 		}
 	};
 
+	const getByName = async (name: string) => {
+		try {
+			setIsLoading(true);
+			const response: AxiosResponse = await axios.get(`https://restcountries.com/v3.1/name/${name}`);
+			setCountries(response.data);
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setIsLoading(false);
+		}
+	};
 	return {
 		countries,
 		isLoading,
-		getByRegion
+		getByRegion,
+		getByName
 	};
 };

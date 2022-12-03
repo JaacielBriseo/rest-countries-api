@@ -4,12 +4,12 @@ import { CountriesCard } from './layout/CountriesCard';
 import { Countries } from './types/interfaces';
 
 export const RestCountriesApp = (): JSX.Element => {
-	const { countries ,getByRegion } = useCountriesData();
+	const { countries, getByRegion, getByName } = useCountriesData();
 	return (
 		<div className='bg-VeryLightGray dark:bg-VeryDarkBlue font-Nunito'>
 			<Header />
-			<SearchInput />
-			<FilterBy onSelect = {getByRegion}/>
+			<SearchInput onSearch={getByName} />
+			<FilterBy onSelect={getByRegion} />
 			{countries.map((country: Countries) => {
 				return (
 					<CountriesCard key={country.name.common}>

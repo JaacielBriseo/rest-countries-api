@@ -1,8 +1,8 @@
-import { useCountriesData } from '../api/useCountriesData';
+import {ChangeEvent} from "react";
 
 export const FilterBy = ({onSelect}:any): JSX.Element => {
 	
-	const selectHandler = (e:any) => {
+	const selectHandler = (e:ChangeEvent<HTMLSelectElement>) => {
 		const regionName = e.target.value
 		onSelect(regionName)
 	}
