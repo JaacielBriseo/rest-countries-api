@@ -1,6 +1,7 @@
 import { useCountriesData } from './api/useCountriesData';
-import { CountryImage, CountryInfo, CountryName, FilterBy, Header, SearchInput } from './components';
+import { FilterBy, Header, SearchInput } from './components';
 import { CountriesCard } from './layout/CountriesCard';
+import { Countries } from './types/interfaces';
 
 export const RestCountriesApp = (): JSX.Element => {
 	const { countries } = useCountriesData();
@@ -9,12 +10,12 @@ export const RestCountriesApp = (): JSX.Element => {
 			<Header />
 			<SearchInput />
 			<FilterBy />
-			{countries.map((country: any) => {
+			{countries.map((country: Countries) => {
 				return (
 					<CountriesCard key={country.name.common}>
-						<CountryImage flag={country.flags.png} />
-						<CountryName name={country.name.common} />
-						<CountryInfo population={country.population} region={country.region} capital={country.capital} />
+						<CountriesCard.Image flag={country.flags.png} />
+						<CountriesCard.Name name={country.name.common} />
+						<CountriesCard.Info population={country.population} region={country.region} capital={country.capital} />
 					</CountriesCard>
 				);
 			})}

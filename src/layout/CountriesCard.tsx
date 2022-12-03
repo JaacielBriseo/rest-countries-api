@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { CountryImage, CountryInfo, CountryName } from '../components';
 interface Props {
 	children: ReactElement | ReactElement[];
 }
@@ -10,3 +11,7 @@ export const CountriesCard = ({ children }: Props) => {
 		</div>
 	);
 };
+
+CountriesCard.Image = CountryImage
+CountriesCard.Info = CountryInfo
+CountriesCard.Name = CountryName
