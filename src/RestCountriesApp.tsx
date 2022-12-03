@@ -1,12 +1,14 @@
 import { useCountriesData } from './api/useCountriesData';
-import { Header } from './components/Header';
+import { FilterBy, Header, SearchInput } from './components';
 
 export const RestCountriesApp = (): JSX.Element => {
 	const { countries } = useCountriesData();
-	console.log(countries);
+	// console.log(countries);
 	return (
-		<>
+		<div className='bg-VeryLightGray dark:bg-VeryDarkBlue h-screen'>
 			<Header />
-		</>
+			<SearchInput />
+			<FilterBy />
+		</div>
 	);
 };
