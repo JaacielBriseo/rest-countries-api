@@ -19,8 +19,21 @@ export const useCountriesData = () => {
 		getData();
 	}, []);
 
+	const getByRegion = async (region: string) => {
+		try {
+			setIsLoading(true);
+			const response: AxiosResponse = await axios.get(`https://restcountries.com/v3.1/region/${region}`);
+			setCountries(response.data);
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
 	return {
 		countries,
 		isLoading,
+		getByRegion
 	};
 };

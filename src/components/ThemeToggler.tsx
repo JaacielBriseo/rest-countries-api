@@ -1,8 +1,10 @@
-import { Moon, Sun } from '../assets';
+import { Moon } from '../assets';
 import { useDarkSide } from '../hooks/useDarkSide';
 
-export const ThemeToggler = (): JSX.Element => {
-	const [colorTheme, setTheme]: any = useDarkSide();
+
+export const ThemeToggler = () => {
+	const [colorTheme, setTheme] = useDarkSide();
+
 	const toggleDarkMode = () => {
 		setTheme(colorTheme);
 	};

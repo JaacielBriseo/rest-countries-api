@@ -7,3 +7,16 @@ export interface Countries {
 	region: string;
 	population: string;
 }
+export interface ImgProp {
+	flag: string;
+}
+
+export interface InfoProps {
+	population: string;
+	region: string;
+	capital: string;
+}
+
+export interface NameProp {
+	name: string;
+}
