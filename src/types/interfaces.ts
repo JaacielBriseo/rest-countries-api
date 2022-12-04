@@ -1,22 +1,18 @@
-export interface Countries {
-	name: { common: string };
-	flags: {
+export interface Country {
+	name?: { common: string; native: string };
+	flags?: {
 		png: string;
 	};
-	capital: string;
-	region: string;
-	population: string;
-}
-export interface ImgProp {
-	flag: string;
-}
-
-export interface InfoProps {
-	population: string;
-	region: string;
-	capital: string;
+	capital?: string;
+	region?: string;
+	population?: string;
+	subRegion?: string;
+	topDomain?: [value: string];
+	currencies?: { key: { name: string } };
+	languages?: { value: string };
 }
 
-export interface NameProp {
-	name: string;
+
+export interface CountryContextProps {
+	country: Country
 }
