@@ -7,7 +7,7 @@ export const CountryInfo = () => {
 	return (
 		<div className='self-start ml-5 mt-3'>
 			<p>
-				<span className='font-semibold'>Population:</span> {country.population}
+				<span className='font-semibold'>Population:</span> {new Intl.NumberFormat().format(country.population)}
 			</p>
 
 			<p>

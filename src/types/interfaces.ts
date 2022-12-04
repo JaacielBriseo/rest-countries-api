@@ -1,18 +1,18 @@
 export interface Country {
-	name?: { common: string; native: string };
-	flags?: {
+	name: { common: string; nativeName?: any };
+	flags: {
 		png: string;
 	};
-	capital?: string;
-	region?: string;
-	population?: string;
-	subRegion?: string;
-	topDomain?: [value: string];
-	currencies?: { key: { name: string } };
-	languages?: { value: string };
+	capital: string;
+	region: string;
+	population: number;
+	subregion?: string;
+	tld?: string;
+	currencies?: any;
+	languages?: any;
+	borders?:any
 }
 
-
 export interface CountryContextProps {
-	country: Country
+	country: Country;
 }
