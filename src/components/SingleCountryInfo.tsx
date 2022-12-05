@@ -5,7 +5,7 @@ import { CountryContext } from '../layout';
 export const SingleCountryInfo = () => {
 	const { country } = useContext(CountryContext);
 	const countryNames: Intl.DisplayNames = new Intl.DisplayNames(['en'], { type: 'region' });
-	const languagesList = Object.values(country.languages).map(lang=>lang)
+	const languagesList = Object.values(country.languages).map((lang) => lang);
 	return (
 		<div>
 			<div className='ml-3 mt-3 space-y-2'>
@@ -37,24 +37,24 @@ export const SingleCountryInfo = () => {
 				</p>
 				<p>
 					<span className='font-semibold'>Languages: </span>
-					{languagesList.map((language:any)=>(
-						<span key={language}>
-							{language},
-						</span>
+					{languagesList.map((language: any) => (
+						<span key={language}>{language},</span>
 					))}
 				</p>
 			</div>
-			<div className='ml-3 mt-8'>
-				<p>
-					<span className='font-semibold'>Border Countries:</span>
+			<div className='ml-3 mt-8 h-28'>
+				<span className='font-semibold'>Border Countries:</span>
+				<div className='mt-3'>
 					{country.borders?.map((border: string, index: number) => {
 						return (
-							<NavLink key={index} to={`/country/${countryNames.of(border.slice(0, -1))}`} className='m-1'>
-								{countryNames.of(border.slice(0, -1))}
+							<NavLink
+							className='m-1 shadow-md mr-5 rounded-sm bg-White'
+							 key={index} to={`/country/${countryNames.of(border.slice(0, -1))}`}>
+								<button className='m-1 w-[35%]'>{countryNames.of(border.slice(0, -1))}</button>
 							</NavLink>
 						);
 					})}
-				</p>
+				</div>
 			</div>
 		</div>
 	);
