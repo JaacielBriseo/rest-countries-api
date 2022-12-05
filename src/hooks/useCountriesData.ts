@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { AxiosResponse } from 'axios';
 import { countriesApi } from '../api';
+import { Country } from '../types';
 
 export const useCountriesData = () => {
-	const [countries, setCountries] = useState<any[]>([]);
+	const [countries, setCountries] = useState<Country[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
+
 	useEffect(() => {
 		const getData = async () => {
 			try {

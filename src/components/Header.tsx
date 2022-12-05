@@ -1,4 +1,4 @@
-import { ThemeToggler } from './ThemeToggler';
+import { ThemeToggler } from './';
 
 export const Header = (): JSX.Element => {
 	return (

@@ -1,3 +1,3 @@
-export * from './useCountriesData'
-export * from './useDarkSide'
-export * from './useSingleCountry'
+export * from './useCountriesData';
+export * from './useDarkSide';
+export * from './useSingleCountry';

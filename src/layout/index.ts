@@ -1,1 +1,1 @@
-export * from './CountryView'
+export * from './CountryView';

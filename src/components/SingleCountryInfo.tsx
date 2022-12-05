@@ -4,7 +4,7 @@ import { CountryContext } from '../layout';
 
 export const SingleCountryInfo = () => {
 	const { country } = useContext(CountryContext);
-	const countryNames = new Intl.DisplayNames(['en'], { type: 'region' });
+	const countryNames: Intl.DisplayNames = new Intl.DisplayNames(['en'], { type: 'region' });
 
 	return (
 		<div>

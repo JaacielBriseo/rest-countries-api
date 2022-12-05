@@ -1,13 +1,16 @@
 import { ChangeEvent } from 'react';
+import { FilterProps } from '../types';
 
-export const FilterBy = ({ onSelect }: any): JSX.Element => {
+export const FilterBy = ({ onSelect }: FilterProps) => {
 	const selectHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-		const regionName = e.target.value;
-		onSelect(regionName);
+		onSelect(e.target.value);
 	};
 	return (
 		<div className='ml-8 mt-8'>
-			<select onChange={selectHandler} className='w-6/12 h-10 shadow-lg rounded-md text-gray-500 text-sm dark:bg-DarkBlue'>
+			<select
+				onChange={selectHandler}
+				className='w-6/12 h-10 shadow-lg rounded-md text-gray-500 text-sm dark:bg-DarkBlue'
+			>
 				<option value=''>Filter by region...</option>
 				<option value='Africa'>Africa</option>
 				<option value='Americas'>America</option>

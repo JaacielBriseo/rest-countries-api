@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { CountryView } from '../layout';
+import { Country } from '../types';
 import { useCountriesData } from '../hooks';
-import { styles } from './';
 import { CountryImage, CountryInfo, CountryName, FilterBy, Header, SearchInput } from '../components';
+import { CountryView } from '../layout';
+import { styles } from './';
 
 export const AllCountries = () => {
 	const { countries, getByRegion, getByName } = useCountriesData();
@@ -11,7 +12,7 @@ export const AllCountries = () => {
 			<Header />
 			<SearchInput onSearch={getByName} />
 			<FilterBy onSelect={getByRegion} />
-			{countries.map((country: any) => {
+			{countries.map((country: Country) => {
 				return (
 					<NavLink key={country.name.common} to={`/country/${country.name.common}`}>
 						<CountryView country={country} style={styles.allCountries}>

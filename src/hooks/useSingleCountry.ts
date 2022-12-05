@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { NavigateFunction, Params, useNavigate, useParams } from 'react-router-dom';
 import { AxiosResponse } from 'axios';
 import { countriesApi } from '../api';
+import { Country } from '../types';
 
 export const useSingleCountry = () => {
-	const { countryName } = useParams();
-	const navigate = useNavigate();
-	const [isLoading, setIsLoading] = useState(false);
-	const [country, setCountry]: any = useState([]);
+	const { countryName }: Readonly<Params<string>> = useParams();
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [country, setCountry] = useState<Country[]>([]);
+	const navigate: NavigateFunction = useNavigate();
 	useEffect(() => {
-		const getCountryByName = async () => {
+		const getCountryByName: () => void = async () => {
 			try {
 				setIsLoading(true);
 				const response: AxiosResponse = await countriesApi.get(`/name/${countryName}`);
@@ -23,7 +24,7 @@ export const useSingleCountry = () => {
 		getCountryByName();
 	}, [countryName]);
 
-	const goBack = () => {
+	const goBack: () => void = () => {
 		navigate(-1);
 	};
 

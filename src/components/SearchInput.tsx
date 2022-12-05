@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { SyntheticEvent, ChangeEvent } from 'react';
+import { SearchProps } from '../types';
 
-export const SearchInput = ({ onSearch }: any): JSX.Element => {
-	const [input, setInput] = useState('');
+export const SearchInput = ({ onSearch }: SearchProps) => {
+	const [input, setInput] = useState<string>('');
 	const onSubmit = (event: SyntheticEvent) => {
 		event.preventDefault();
 		onSearch(input);

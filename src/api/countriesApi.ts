@@ -1,5 +1,5 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
-export const countriesApi = axios.create({
-    baseURL: 'https://restcountries.com/v3.1'
-})
+export const countriesApi: AxiosInstance = axios.create({
+	baseURL: 'https://restcountries.com/v3.1',
+});
