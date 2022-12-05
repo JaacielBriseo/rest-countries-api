@@ -1,5 +1,5 @@
 import { ReactElement, createContext } from 'react';
-import { Country, CountryContextProps } from '../types/interfaces';
+import { Country, CountryContextProps } from '../types';
 interface Props {
 	children: ReactElement | ReactElement[];
 	country: Country;

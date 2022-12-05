@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CountryContext } from '../layout/CountryView';
+import { CountryContext } from '../layout';
 
 export const SingleCountryInfo = () => {
 	const { country } = useContext(CountryContext);
@@ -42,7 +42,7 @@ export const SingleCountryInfo = () => {
 			<div>
 				<p>
 					<span className='font-semibold'>Border Countries:</span>
-					{country.borders.map((border: string, index: number) => {
+					{country.borders?.map((border: string, index: number) => {
 						return (
 							<NavLink key={index} to={`/country/${countryNames.of(border.slice(0, -1))}`} className='m-1'>
 								{countryNames.of(border.slice(0, -1))}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import axios, { AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
+import { countriesApi } from '../api';
 
 export const useCountriesData = () => {
 	const [countries, setCountries] = useState<any[]>([]);
@@ -8,7 +9,7 @@ export const useCountriesData = () => {
 		const getData = async () => {
 			try {
 				setIsLoading(true);
-				const response: AxiosResponse = await axios.get('https://restcountries.com/v3.1/all');
+				const response: AxiosResponse = await countriesApi.get('/all');
 				setCountries(response.data);
 			} catch (error) {
 				console.error(error);
@@ -22,7 +23,7 @@ export const useCountriesData = () => {
 	const getByRegion = async (region: string) => {
 		try {
 			setIsLoading(true);
-			const response: AxiosResponse = await axios.get(`https://restcountries.com/v3.1/region/${region}`);
+			const response: AxiosResponse = await countriesApi.get(`/region/${region}`);
 			setCountries(response.data);
 		} catch (error) {
 			console.log(error);
@@ -34,7 +35,7 @@ export const useCountriesData = () => {
 	const getByName = async (name: string) => {
 		try {
 			setIsLoading(true);
-			const response: AxiosResponse = await axios.get(`https://restcountries.com/v3.1/name/${name}`);
+			const response: AxiosResponse = await countriesApi.get(`/name/${name}`);
 			setCountries(response.data);
 		} catch (error) {
 			console.log(error);
@@ -46,6 +47,6 @@ export const useCountriesData = () => {
 		countries,
 		isLoading,
 		getByRegion,
-		getByName
+		getByName,
 	};
 };

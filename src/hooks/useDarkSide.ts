@@ -15,5 +15,5 @@ export const useDarkSide = () => {
 		localStorage.setItem('theme', theme);
 	}, [theme, colorTheme]);
 
-	return [colorTheme, setTheme ] as const
+	return [colorTheme, setTheme] as const;
 };
