@@ -8,7 +8,7 @@ export const SingleCountryInfo = () => {
 	const countryNames: Intl.DisplayNames = new Intl.DisplayNames(['en'], { type: 'region' });
 	const languagesList = country.languages ? Object.values(country.languages as LanguageMap).map((lang) => lang) : [];
 	return (
-		<div className='flex flex-col sm:flex-row sm:text-sm min-h-screen'>
+		<section className='flex flex-col sm:flex-row sm:text-sm min-h-screen'>
 			<div className='ml-3 mt-3 space-y-2 sm:-mt-8 sm:ml-20'>
 				<h1 className='font-bold hidden mt-10 sm:block sm:mb-2 sm:text-lg'>{country.name.common}</h1>
 				{country.name.nativeName && Object.keys(country.name.nativeName).length > 0 ? (
@@ -31,6 +31,6 @@ export const SingleCountryInfo = () => {
 				<span>Border Countries:</span>
 				<Borders country={country} countryNames={countryNames} />
 			</div>
-		</div>
+		</section>
 	);
 };

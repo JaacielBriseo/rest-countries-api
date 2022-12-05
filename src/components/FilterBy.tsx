@@ -6,10 +6,10 @@ export const FilterBy = ({ onSelect }: FilterProps) => {
 		onSelect(e.target.value);
 	};
 	return (
-		<div className='ml-8 mt-8'>
+		<section className='ml-8 mt-8 mr-28'>
 			<select
 				onChange={selectHandler}
-				className='w-6/12 h-10 shadow-lg rounded-md text-gray-500 text-sm dark:bg-DarkBlue'
+				className='h-10 shadow-lg rounded-md text-gray-500 text-sm dark:bg-DarkBlue'
 			>
 				<option value=''>Filter by region...</option>
 				<option value='Africa'>Africa</option>
@@ -18,6 +18,6 @@ export const FilterBy = ({ onSelect }: FilterProps) => {
 				<option value='Europe'>Europa</option>
 				<option value='Oceania'>Oceania</option>
 			</select>
-		</div>
+		</section>
 	);
 };
