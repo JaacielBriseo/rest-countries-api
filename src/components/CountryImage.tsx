@@ -7,5 +7,5 @@ interface Props {
 export const CountryImage = ({ styleClasses }: Props) => {
 	const { country } = useContext(CountryContext);
 
-	return <img src={country.flags?.png} alt='Country Flag' className={`${styleClasses}`} />;
+	return <img src={country.flags?.png} alt='Country Flag' className={`${styleClasses} max-w-md`} />;
 };

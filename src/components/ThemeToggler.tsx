@@ -1,4 +1,4 @@
-import { Moon } from '../assets';
+import { Moon, Sun } from '../assets';
 import { useDarkSide } from '../hooks';
 
 export const ThemeToggler = () => {
@@ -9,7 +9,7 @@ export const ThemeToggler = () => {
 	};
 	return (
 		<button onClick={toggleDarkMode}>
-			<img src={Moon} alt='Theme Toggler' className='w-3 h-3 mr-2' />
+			<img src={colorTheme === 'dark' ? Moon : Sun} alt='Theme Toggler' className='w-3 h-3 mr-2 ' />
 		</button>
 	);
 };
