@@ -14,7 +14,7 @@ export const SingleCountry = () => {
 			{country.map((country: Country) => {
 				return (
 					<CountryView key={country.name.common} country={country} style={styles.singleCountry}>
-						<CountryImage borderStyle={'rounded-none'} />
+						<CountryImage styleClasses='rounded-none h-44 mx-auto w-11/12 max-w-xs' />
 						<CountryName />
 						<SingleCountryInfo />
 					</CountryView>

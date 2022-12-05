@@ -16,7 +16,7 @@ export const AllCountries = () => {
 				return (
 					<NavLink key={country.name.common} to={`/country/${country.name.common}`}>
 						<CountryView country={country} style={styles.allCountries}>
-							<CountryImage borderStyle='rounded-t-md'/>
+							<CountryImage styleClasses='rounded-t-md' />
 							<CountryName />
 							<CountryInfo />
 						</CountryView>

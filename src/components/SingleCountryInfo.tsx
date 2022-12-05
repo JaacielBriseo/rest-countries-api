@@ -1,16 +1,16 @@
-import { useContext } from 'react';
+import { DetailedHTMLProps, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CountryContext } from '../layout';
 
 export const SingleCountryInfo = () => {
 	const { country } = useContext(CountryContext);
 	const countryNames: Intl.DisplayNames = new Intl.DisplayNames(['en'], { type: 'region' });
-
+	const languagesList = Object.values(country.languages).map(lang=>lang)
 	return (
 		<div>
-			<div className='self-start ml-5 mt-3'>
+			<div className='ml-3 mt-3 space-y-2'>
 				<p>
-					<span className='font-semibold'>Native name:</span>{' '}
+					<span className='font-semibold'>Native name:</span>
 					{country.name.nativeName[Object.keys(country.name.nativeName)[0]].official}
 				</p>
 				<p>
@@ -27,19 +27,24 @@ export const SingleCountryInfo = () => {
 					<span className='font-semibold'>Capital:</span> {country.capital}
 				</p>
 			</div>
-			<div>
+			<div className='ml-3 mt-8 space-y-2'>
 				<p>
 					<span className='font-semibold'>Top Level Domain:</span> {country.tld}
 				</p>
 				<p>
-					<span className='font-semibold'>Currencies: </span>{' '}
+					<span className='font-semibold'>Currencies: </span>
 					{country.currencies[Object.keys(country.currencies)[0]].name}
 				</p>
 				<p>
-					<span className='font-semibold'>Languages: </span> {country.languages[Object.keys(country.languages)[0]]}
+					<span className='font-semibold'>Languages: </span>
+					{languagesList.map((language:any)=>(
+						<span key={language}>
+							{language},
+						</span>
+					))}
 				</p>
 			</div>
-			<div>
+			<div className='ml-3 mt-8'>
 				<p>
 					<span className='font-semibold'>Border Countries:</span>
 					{country.borders?.map((border: string, index: number) => {
