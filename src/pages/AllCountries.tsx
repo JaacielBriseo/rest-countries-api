@@ -12,17 +12,21 @@ export const AllCountries = () => {
 			<Header />
 			<SearchInput onSearch={getByName} />
 			<FilterBy onSelect={getByRegion} />
-			{countries.map((country: Country) => {
-				return (
-					<NavLink key={country.name.common} to={`/country/${country.name.common}`}>
-						<CountryView country={country} style={styles.allCountries}>
-							<CountryImage styleClasses='rounded-t-md' />
-							<CountryName />
-							<CountryInfo />
-						</CountryView>
-					</NavLink>
-				);
-			})}
+
+			<div className='flex flex-wrap justify-center'>
+				{countries.map((country: Country) => {
+					return (
+						<NavLink
+						key={country.name.common} to={`/country/${country.name.common}`}>
+							<CountryView country={country} style={styles.allCountries}>
+								<CountryImage styleClasses='rounded-t-md' />
+								<CountryName />
+								<CountryInfo />
+							</CountryView>
+						</NavLink>
+					);
+				})}
+			</div>
 		</div>
 	);
 };

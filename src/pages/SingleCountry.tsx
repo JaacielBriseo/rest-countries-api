@@ -1,5 +1,5 @@
 import { useSingleCountry } from '../hooks';
-import { CountryImage, Header, CountryName, SingleCountryInfo } from '../components';
+import { CountryImage, Header, SingleCountryInfo } from '../components';
 import { CountryView } from '../layout';
 import { styles } from './';
 import { Country } from '../types';
@@ -15,7 +15,6 @@ export const SingleCountry = () => {
 				return (
 					<CountryView key={country.name.common} country={country} style={styles.singleCountry}>
 						<CountryImage styleClasses='rounded-none h-44 mx-auto sm:w-1/3 sm:ml-8 sm:h-64 sm:mx-0' />
-						<CountryName />
 						<SingleCountryInfo />
 					</CountryView>
 				);

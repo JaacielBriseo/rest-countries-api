@@ -17,11 +17,7 @@ export interface Currencies {
 		name: string;
 	};
 }
-export interface LanguageMap {
-	[key: string]: {
-		name: string;
-	};
-}
+
 export interface NativeName {
 	[key: string]: {
 		official: string;
@@ -42,3 +38,14 @@ export interface Styles {
 	allCountries: string;
 	singleCountry: string;
 }
+export interface Language {
+	[key: string]: string;
+}
+
+export interface LanguageMap {
+	[key: string]: Language;
+}
+
+export type LanguageProps = {
+	languagesList: Language[];
+};
