@@ -1,8 +1,11 @@
 import { useContext } from 'react';
 import { CountryContext } from '../layout/CountryView';
 
-export const CountryImage = () => {
+interface Props {
+	borderStyle: string;
+}
+export const CountryImage = ({ borderStyle }: Props) => {
 	const { country } = useContext(CountryContext);
 
-	return <img src={country.flags?.png} alt='Country Flag' className='rounded-t-md' />;
+	return <img src={country.flags?.png} alt='Country Flag' className={`${borderStyle}`} />;
 };

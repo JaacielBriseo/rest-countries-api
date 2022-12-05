@@ -5,7 +5,6 @@ import { styles } from './';
 import { Country } from '../types';
 export const SingleCountry = () => {
 	const { goBack, country, isLoading } = useSingleCountry();
-	console.log(country);
 	return (
 		<div className='bg-VeryLightGray min-h-screen dark:bg-DarkBlue dark:text-White'>
 			<Header />
@@ -15,7 +14,7 @@ export const SingleCountry = () => {
 			{country.map((country: Country) => {
 				return (
 					<CountryView key={country.name.common} country={country} style={styles.singleCountry}>
-						<CountryImage />
+						<CountryImage borderStyle={'rounded-none'} />
 						<CountryName />
 						<SingleCountryInfo />
 					</CountryView>
